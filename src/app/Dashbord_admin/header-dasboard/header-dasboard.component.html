@@ -1,0 +1,17 @@
+<div class="Container_Dashbord">
+  <div class="Dashbord_admin">
+    <ul>
+      <li>
+        <img src="https://img.freepik.com/free-vector/international-student-day-banner-design_1308-122226.jpg?size=626&ext=jpg&uid=R119572586&ga=GA1.1.662083046.1696519376&semt=ais" alt="" srcset="" alt="">
+        <p class="" id="Dashboard">Dashboard</p>
+      </li>
+      <li id="Statistique"><i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp;<a [routerLink]="['/administration/statistique', UserId]">Statistique</a></li>
+      <li id="Statistique"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;<a [routerLink]="['/administration/Gestion-enseignant', UserId]">Gestion enseignant</a></li>
+      <li id="Statistique"><i class="fa-solid fa-graduation-cap"></i>&nbsp;&nbsp;<a [routerLink]="['/administration/Gestion-apprenant', UserId]">Gestion Apprenant</a></li>
+      <li id="Statistique"><i class="fa-solid fa-book"></i>&nbsp;&nbsp;<a [routerLink]="['/administration/Gestion-matiere', UserId]">Gestion Matière</a></li>
+      <li id="Statistique"><i class="fa-solid fa-school"></i>&nbsp;&nbsp;<a [routerLink]="['/administration/Gestion-classe', UserId]">Gestion Classe</a></li>
+      <li id="Evaluation"><i class="fa-solid fa-school"></i>&nbsp;&nbsp;<a [routerLink]="['EspaceProf/:id', UserId]">Gestion Evaluation</a></li>
+      <li id="Statistique"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;<a routerLink="/">Se Deconnecter</a></li>
+    </ul>
+  </div>
+</div>

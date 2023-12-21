@@ -1,0 +1,106 @@
+.Menu {
+  background-color: #457A74;
+}
+
+.Menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  padding: 0.5em;
+  color: white;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.Menu ul li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.demi-cercle {
+  width: 100px;
+  /* Largeur du demi-cercle (ajustez selon vos besoins) */
+  height: 50px;
+  /* Hauteur du demi-cercle (la moitié de la largeur) */
+  background-color: #457A74;
+  /* Couleur du demi-cercle */
+  border-radius: 0 0 0 100px;
+  /* Utilisation du border-radius pour obtenir un demi-cercle */
+  position: fixed;
+  bottom: 20px;
+  /* Distance du bas */
+  right: 20px;
+  /* Distance de la droite */
+}
+
+.demi-cercle1 {
+  width: 100px;
+  /* Largeur du demi-cercle (ajustez selon vos besoins) */
+  height: 50px;
+  /* Hauteur du demi-cercle (la moitié de la largeur) */
+  background-color: #457A74;
+  /* Couleur du demi-cercle */
+  border-radius: 0 100px 0 100px;
+  /* Utilisation du border-radius pour obtenir un demi-cercle */
+  position: fixed;
+  bottom: 47px;
+  /* Distance du bas */
+  /* right: 20px; */
+  /* Distance de la droite */
+}
+
+.Section {
+  display: grid;
+  grid-template-columns: 27% 60%;
+  /* justify-content: space-between; */
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  /* gap: 70px; */
+}
+
+.Section_Information {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 420px;
+  height: 550px;
+  margin-left: 20px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 50px;
+}
+
+.Section_Information img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.Section_note {
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-top-right-radius: 100px;
+
+  /* width: 420px;
+    height: 550px; */
+}
+
+.Information {
+  padding: 1em;
+  margin-left: 20px;
+}
+
+.btn {
+  background-color: #457A74;
+  color: white;
+}
+
+.Mdp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

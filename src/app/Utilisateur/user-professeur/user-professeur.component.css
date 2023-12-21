@@ -1,0 +1,75 @@
+.modal-content{
+    background-color: #CCD5AE;
+    color: rgb(0, 0, 0);
+}
+h1{
+    
+    font-weight: 700;
+}
+.modal-header{
+    background-color: #457A74;
+    color: white;
+    text-align: center;
+}
+#btn1{
+    background-color: #023b3b;
+}
+.titre{
+    background-color: #ffdb58;
+    color: white;
+}
+/** tableau*/
+.toptableau{
+    background-color: #eeeeee;
+
+}
+.title{
+    margin: 0 auto;
+}
+.action-list{
+    list-style: none;
+}
+thead{
+    background-color: #457A74;
+
+}
+tbody{
+    /* background-color: #457A74; */
+
+}
+/** tableau*/
+
+/* menu eleve */
+
+#imagrelogo img{
+    height: 60px;
+  }
+  .navbar-nav a{
+  font-size: 20px;
+  }
+  p{
+  font-size: 18px;
+  }
+  thead th {
+    /* background-color: #457A74; */
+    color: #ffdb58;
+  }
+
+  .custom-link{
+    border: 1px solid #ced4da; /* Couleur de la bordure */
+    padding: 0.5rem 1rem; /* Espacement interne */
+    border-radius: 5px; /* Rayon des coins */
+  }
+  
+  .rowEval{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-sizing: border-box;
+  }
+  .card{
+    width: 25rem;
+  }
+  #image{
+    width: 300px;
+  }

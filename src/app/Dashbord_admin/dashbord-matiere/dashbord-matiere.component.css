@@ -1,0 +1,47 @@
+#liste{
+  
+    margin-left: 200px;
+  }
+.modal-content{
+    background-color: #CCD5AE;
+    color: rgb(0, 0, 0);
+}
+h1{
+    
+    font-weight: 700;
+}
+/* h3 {
+    margin-top: 5px;
+} */
+.modal-header{
+    background-color: #457A74;
+    color: white;
+    text-align: center;
+}
+#btn1{
+    background-color: #457A74;
+}
+.titre{
+    background-color: #ffdb58;
+    color: white;
+}
+/** tableau*/
+.toptableau{
+    background-color: #eeeeee;
+
+}
+.title{
+    margin: 0 auto;
+}
+.action-list{
+    list-style: none;
+}
+thead{
+    background-color: #457a6e;
+
+}
+/* tbody{
+    background-color: #457A74;
+
+} */
+/** tableau*/

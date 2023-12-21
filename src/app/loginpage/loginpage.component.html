@@ -1,0 +1,51 @@
+<!-- <p class="text-primary">authentification works!</p> -->
+<!--------------- Debut Section Container --------------->
+<div class="Container">
+  <!-- Debut Section Container Left -->
+  <div class="Container_left">
+    <div class="logo mt-4">
+      <img
+        src="https://img.freepik.com/free-vector/international-student-day-banner-design_1308-122226.jpg?size=626&ext=jpg&uid=R119572586&ga=GA1.1.662083046.1696519376&semt=ais"
+        alt="" srcset="">
+    </div>
+    <h4 class="text-center mt-3 ">Welcome</h4>
+    <p class="text-center">Please <span id="Sign">Sign in to continue</span></p>
+    <!----------------- Debut Section Formulaire --------------->
+    <div class="Container_Formulaire">
+      <form (submit)="submitFunction($event)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            [(ngModel)]="formData.email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+            [(ngModel)]="formData.pass">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <div class="d-flex justify-content-between">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            <p class="forgot">Forgot Password ?</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="login">Login</button>
+        <p class="text-center mt-4">Not a member? <span class="Register">Register here</span></p>
+      </form>
+      <!------------------- Fin Formulaire ---------------------->
+    </div>
+    <!------------------- Fin Section Formulaire ------------------>
+  </div>
+  <!-- Fin Section Container left -->
+  <!-- Debut Section Container Right -->
+  <div class="Container_Right">
+    <img
+      src="https://img.freepik.com/free-photo/medium-shot-boy-portrait-with-graduation-background_23-2150293635.jpg?size=626&ext=jpg&uid=R119572586&ga=GA1.1.662083046.1696519376&semt=sph"
+      alt="">
+  </div>
+  <!-- Fin Section Container Right -->
+</div>
+
+
+<!--------------- Fin Section Container --------------->

@@ -1,0 +1,329 @@
+<!-- <app-dashbord-statistique></app-dashbord-statistique> -->
+<app-header-dasboard></app-header-dasboard>
+
+<!-- statistique -->
+
+
+<div class="Container">
+  <div class="Container_Card">
+    <div class="Container_Card mt-5">
+      <div class="Card1">
+        <div class="cardbx1">
+          <i class='bx bxs-graduation'></i>
+          <div>
+            <p class="text-center">Apprenants</p>
+            <h5 class="text-center">{{tailleApprenant}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx">
+          <i class='bx bx-user-pin'></i>
+          <div>
+            <p class="text-center">Enseignants</p>
+            <h5 class="text-center">{{tailleenseignant}}</h5>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<!-- stat   finnnn -->
+<div class="listeapprenent mt-5 mb-5">
+  <div class="container">
+  <div class="title text-center">
+    <h3>Listes des apprenants</h3>
+  </div>
+
+  <div class="listecontainer" id="liste">
+    <div >
+      <button class="btn btn-outline-warning mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal" id="user"> Ajouter apprenant</button>
+    </div>
+
+    <div class="card-body shadow-lg">
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                  <tr>
+                    <th appCouleurfond class="text-white fw-bold">Prenom</th>
+                      <th appCouleurfond class="text-white fw-bold">Nom</th>
+                      <th appCouleurfond class="text-white fw-bold">Email</th>
+                      <th appCouleurfond class="text-white fw-bold">Niveau</th>
+                      <th appCouleurfond class="text-white fw-bold">annnee</th>
+                      <th appCouleurfond class="text-white fw-bold">activer</th>
+                      <th appCouleurfond class="text-white fw-bold">desactiver</th>
+                      <th appCouleurfond class="text-white fw-bold">detail</th>
+                      <th appCouleurfond class="text-white fw-bold">modifier</th>
+
+
+                  </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody *ngFor="let element of usersdata " >
+                  <tr *ngIf="element.role==3 && element.etat==1" >
+                      <td > {{element.prenom}} </td>
+                      <td>{{element.nom}} </td>
+                      <td>{{element.email}} </td>
+                      <td>{{element.niveau}}</td>
+                      <td>{{element.annee}} </td>
+                      <td>
+                         <div class="d-flex justify-content-evenly">
+                        <button class="btn btn-outline-success">
+                          <i class="bi bi-person-fill-up" style="font-size: 20px;"></i>
+                        </button>
+                      </div>
+                       </td>
+                      <td>
+                         <div class="d-flex justify-content-evenly">
+                          <button class="btn btn-outline-danger " (click)="desactiver(element.id)">
+                            <i class="bi bi-person-fill-x" style="font-size: 20px;" ></i>
+                          </button>
+                      </div>
+                       </td>
+                      <td>
+                        <div class="d-flex justify-content-center">
+                          <button class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal-detail" appCouleurfond (click)="selectElement (element)"  ><i class="bi bi-person-vcard"style="font-size: 20px;"  ></i></button>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="d-flex justify-content-center">
+                          <button class="btn text-white" data-bs-toggle="modal" data-bs-target="#exampleModal-modif" appCouleurfond (click)="selectElement (element)"> <i class="bi bi-pencil-fill" style="font-size: 20px;"  ></i> </button>
+                        </div>
+
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- modall ajout-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Apprenant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" accordion-header></button>
+      </div>
+      <div class="modal-body" novalidate>
+        <form action="" (ngSubmit)="SoumettreFormlaire (validForm)"  #validForm="ngForm" >
+          <div class="col-md-12">
+            <label for="prenom" class="form-label">Prenom:</label>
+            <input type="text" name="prenom" class="form-control" id="validationCustom01" placeholder="Prenom"  [(ngModel)]="formuStudent.prenom" required  #prenomVerif="ngModel" [ngClass]="{'is-invalid' : prenomVerif.touched && !prenomVerif.valid}" >
+            <div class="invalid-feedback">
+              <span *ngIf="prenomVerif.errors">
+                veillez entrer votre prenom
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="nom" class="form-label">Nom:</label>
+            <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="Nom"  [(ngModel)]="formuStudent.nom" required  #nomVerif="ngModel" [ngClass]="{'is-invalid': nomVerif.touched && !nomVerif.valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="nomVerif.errors">
+                veillez entrer votre nom
+              </span>
+            </div>
+
+          </div>
+          <div class="col-md-12">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="email" required email [(ngModel)]="formuStudent.email" #emailVerif="ngModel"
+            [ngClass]="{'is-invalid':emailVerif.touched && !emailVerif.valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="emailVerif.errors?.['required']">
+                veillez renseiger l'email
+              </span>
+              <span *ngIf="emailVerif.errors?.['email']">
+                L'email n'est pas comforme
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" name="password" class="form-control" id="password" placeholder="Password" required minlength="5" [(ngModel)]="formuStudent.password" #passVerif="ngModel"
+            [ngClass]="{'is-invalid':passVerif.touched && !passVerif.valid}" >
+            <div class="invalid-feedback">
+              <span *ngIf="passVerif.errors?.['required']">
+                veiller entrer le mot de pass
+              </span>
+              <span *ngIf="passVerif.errors?.['minlength']">
+                mot de pass minimum 5 caratères
+              </span>
+
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="adresse" class="form-label">Annee:</label>
+            <input type="date" name="annee" id="annee" placeholder="annee" [(ngModel)]="formuStudent.annee" >
+          </div>
+          <div class="col-md-12">
+            <label for="adresse" class="form-label">Niveau:</label>
+            <select class="form-select form-select-sm mb-3" name="niveau" aria-label="Large select example" required="" [(ngModel)]="formuStudent.niveau" #niveauVerif="ngModel"
+            [ngClass]="{'is-invalid':niveauVerif.touched && !niveauVerif.valid}" >
+            <div class="invalid-feedback">
+              <span *ngIf="niveauVerif.errors">
+              ajouter le niveau
+              </span>
+            </div>
+              <option selected>choisis le niveau</option>
+              <option value="L1">L1</option>
+              <option value="L2">L2</option>
+              <option value="L3">L3</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!validForm.valid"  >Ajouter</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fin modal ajout -->
+
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+<!-- modal detaiil -->
+<div class="modal fade" id="exampleModal-detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+      <div class="modal-body" appCouleurfond>
+        <div class="card-container" appColorhover id="detail" *ngIf="emelementSelectioner">
+          <img class="round" src="https://img.freepik.com/psd-premium/avatar-masculin-remise-diplomes-rendu-3d_52659-1060.jpg?w=740" alt="user" />
+          <h3 class="text-black fw-bold"> {{emelementSelectioner.prenom}}  {{emelementSelectioner.nom}} </h3>
+          <h6  class="text-black fw-bold"> {{emelementSelectioner.niveau}}</h6>
+          <p class="text-black fw-bold"> {{emelementSelectioner.email}}</p>
+          <p class="text-black fw-bold"> {{emelementSelectioner.annee}}</p>
+          <div class=" d-flex justify-content-around pt-4">
+
+
+
+              <button type="button" class="btn btn-secondary mb-4" data-bs-dismiss="modal">Close</button>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fin modal detail -->
+
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+<!-- modall modifier-->
+
+<div class="modal fade" id="exampleModal-modif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Apprenant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" accordion-header></button>
+      </div>
+      <div class="modal-body" *ngIf="emelementSelectioner" >
+        <form action="" (ngSubmit)="modifierElement (modifForm)"  #modifForm="ngForm" >
+          <div class="col-md-12">
+            <label for="prenom" class="form-label">Prenom:</label>
+            <input type="text" name="prenom" class="form-control" id="validationCustom01" placeholder="Prenom" required [(ngModel)]="emelementSelectioner.prenom" #modifPrenom="ngModel"
+            [ngClass]="{'is-invalid': modifPrenom.touched && !modifPrenom.valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="modifPrenom.errors">
+              reineigner le prenom
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="nom" class="form-label">Nom:</label>
+            <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="Nom" required [(ngModel)]="emelementSelectioner.nom" #modifNom="ngModel"
+           [ngClass]="{'is-invalid' : modifNom.touched && !modifNom.valid}">
+           <div class="invalid-feedback">
+            <span *ngIf="modifNom.errors">
+              veiller reseigner le nom
+            </span>
+           </div>
+          </div>
+          <div class="col-md-12">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="email" required email [(ngModel)]="emelementSelectioner.email" #modifEmail="ngModel"
+            [ngClass]="{'is-invalid' : modifEmail.touched &&  !modifEmail.valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="modifEmail.errors?.['required']">
+                veiller mettre l'email
+              </span>
+              <span *ngIf="modifEmail.errors?.['email']">
+                format email invalid
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" name="password" class="form-control" id="password" placeholder="Password" required minlength="5" [(ngModel)]="emelementSelectioner.password" #modifPass="ngModel"
+            [ngClass]="{'is-invalid':modifPass.touched && !modifPass.valid}">
+            <div class="invalid-feedback">
+              <span *ngIf="modifPass.errors?.['required']">
+              veiller renseiger le mot de pass
+              </span>
+              <span *ngIf="modifPass.errors?.['minlength']">
+              Mot de pass minimum 5 caractères
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="adresse" class="form-label">Annee:</label>
+            <input type="date" name="annee" id="annee" placeholder="annee" [(ngModel)]="emelementSelectioner.annee" required #modifAnnee="ngModel" [ngClass]="{'is-invalid': modifAnnee.touched && !modifAnnee.valid}" >
+            <div class="invalid-feedback">
+              <span *ngIf="modifAnnee.errors">
+                vailler renseigner l'annee
+
+              </span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="adresse" class="form-label">Niveau:</label>
+            <select class="form-select form-select-sm mb-3" name="niveau" aria-label="Large select example" [(ngModel)]="emelementSelectioner.niveau" required  #modifNiveau="ngModel" [ngClass]="{'is-invalid': modifNiveau.touched && !modifNiveau.valid}" >
+              <div class="invalid-feedback">
+                <span *ngIf="modifNiveau.errors">
+                  vailler renseigner lE Niveau
+
+                </span>
+              </div>
+              <option selected>choisis le niveau</option>
+              <option value="L1">L1</option>
+              <option value="L2">L2</option>
+              <option value="L3">L3</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit"  [disabled]="!modifForm.valid">modifier</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fin modal modifier -->
+
+

@@ -1,0 +1,14 @@
+
+#imagrelogo img{
+  height: 60px;
+}
+.navbar-nav a{
+font-size: 20px;
+}
+p{
+font-size: 18px;
+}
+thead th {
+  /* background-color: #457A74; */
+  color: #ffdb58;
+}

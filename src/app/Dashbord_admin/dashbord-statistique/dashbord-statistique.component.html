@@ -1,0 +1,71 @@
+<app-header-dasboard userid = "1"></app-header-dasboard>
+<div class="Container">
+  <div class="Container_Card">
+    <div class="Container_Card mt-5">
+      <div class="Card1">
+        <div class="cardbx1">
+          <i class='bx bxs-graduation'></i>
+          <div>
+            <p class="text-center">Apprenants</p>
+            <h5 class="text-center">{{tailleApprenant}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx">
+          <i class='bx bx-user-pin'></i>
+          <div>
+            <p class="text-center">Enseignants</p>
+            <h5 class="text-center">{{tailleenseignant}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx1">
+          <i class='bx bx-book-bookmark'></i>
+          <div>
+            <p class="text-center">Matières</p>
+            <h5 class="text-center">{{tailleMatiere}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx">
+          <i class='bx bxs-school'></i>
+          <div>
+            <p class="text-center">Classes</p>
+            <h5 class="text-center">{{tailleClasse}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" id="btn1" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    style="margin-top: 80px; margin-left: 90px; margin-bottom: 20px;">
+    Voir plus
+  </button>
+
+
+  <table class="table" style="width: 85%; margin: auto;">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col" rowspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th scope="row">#</th>
+        <td>Ndoye</td>
+        <td>Libasse</td>
+        <td>Libasse.gmail.com</td>
+        <td><button class="btn btn" id="btn2" >Archiver</button></td>
+        <td><button class="btn btn" id="btn1">Desactivé</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

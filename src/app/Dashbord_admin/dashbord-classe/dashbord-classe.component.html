@@ -1,0 +1,99 @@
+<app-header-dasboard></app-header-dasboard>
+<div class="listeapprenent  mb-5">
+    <div class="container">
+    <div class="title text-center">
+      <h3 class="text-center fw-bold "><span class="material-symbols-outlined">
+        add_notes
+        </span >Liste des Classes </h3>
+    </div>
+    <div class="listecontainer" id="liste">
+      <div >
+       <button type="button" class="btn titre text-center mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+          Ajouter une classe
+      </button>
+    </div>
+
+    <div class="card-body shadow-lg">
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+              <thead>
+                  <tr>
+                      <th appCouleurfond class="text-white fw-bold"> ID</th>
+                      <th appCouleurfond class="text-white fw-bold">Niveau</th>
+                      <th appCouleurfond class="text-white fw-bold">Effectifs </th>
+                      <!-- <th appCouleurfond class="text-white fw-bold">Semestre </th> -->
+                    </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody >
+                  <tr *ngFor="let classe1 of userClasse" >
+                      <td> {{classe1.id}}</td>
+                      <td>{{classe1.niveau}}</td>
+                      <td>{{classe1.effectif  }}</td>
+                      
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+<!-- Ajout classe  -->
+
+<!-- Button trigger modal -->
+<div class="text-center">
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 " id="staticBackdropLabel" >  
+        <span class="material-symbols-outlined">
+          list_alt_add
+          </span>
+          Ajouter une classe </h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+      <form action="" method ="post">
+       
+    
+        <div class="mb-3">
+            <label for="validationDefault04" class="form-label">Niveau</label>
+            <select class="form-select"  name="niveau" for ="niveau" required   [(ngModel)] ="niveauClasse">
+              <option selected disabled value="">Choisissez le niveau </option>
+              <option value="licence 1">Licence 1</option>
+              <option value="licence 2">Licence 2</option>
+              <option value="licence 3">Licence 3</option>
+              <option value="Master 1">Master 1</option>
+              <option value="Master 2">Master 2</option>
+            </select>
+          </div>
+        
+        <div class="mb-3">
+            <label for="dateEvaluation" class="form-label">Effectifs</label>
+            <input type="number" class="form-control" id="ajoutclasse" name="effectif" [(ngModel)] ="effectifClasse" >
+        </div>
+      </form>
+      </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+      <button type="button" class="btn btn-primary"  (click)="ajouterClasse()">Enregistrer</button>
+    </div>
+
+
+  </div>
+ 
+
+  

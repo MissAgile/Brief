@@ -1,0 +1,84 @@
+.Container {
+  margin-left: 240px;
+}
+
+.Container_Card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.Card1 {
+  width: 260px;
+  height: 130px;
+  background-color: white;
+  padding: 1em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* border-radius: 20px; */
+  border-left: 5px solid #457A74;
+  display: flex;
+}
+
+.Card1 i {
+  font-size: 30px;
+}
+
+.cardbx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardbx i {
+  font-size: 40px;
+  color: #457A74;
+  background-color: aliceblue;
+  padding: 0.3em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+}
+
+.cardbx1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-color: #FFE0D3;; */
+}
+
+.cardbx1 i {
+  font-size: 40px;
+  color: #457A74;
+  background-color: #FFE0D3;
+  padding: 0.3em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+}
+
+.cardbx2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #FFE0D3;; */
+}
+
+.cardbx2 i {
+  font-size: 30px;
+  color: #457A74;
+  background-color: #d7d7d7;
+  padding: 0.3em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+}
+
+#btn1 {
+  background-color: #457A74;
+  color: white;
+}
+
+#btn2 {
+  background-color: #FFE0D3;
+  color: white;
+}

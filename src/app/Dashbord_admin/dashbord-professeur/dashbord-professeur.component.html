@@ -1,0 +1,156 @@
+<app-header-dasboard></app-header-dasboard>
+<div class="Container">
+  <div class="Container_Card">
+    <div class="Container_Card mt-5">
+      <div class="Card1">
+        <div class="cardbx1">
+          <i class='bx bxs-graduation'></i>
+          <div>
+            <p class="text-center">Apprenants</p>
+            <h5 class="text-center">1000</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx">
+          <i class='bx bx-user-pin'></i>
+          <div>
+            <p class="text-center">Enseignants</p>
+            <h5 class="text-center">12000</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx1">
+          <i class='bx bx-book-bookmark'></i>
+          <div>
+            <p class="text-center">Matières</p>
+            <h5 class="text-center">50</h5>
+          </div>
+        </div>
+      </div>
+      <div class="Card1">
+        <div class="cardbx">
+          <i class='bx bxs-school'></i>
+          <div>
+            <p class="text-center">Classes</p>
+            <h5 class="text-center">20</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" id="btn1" class="btn btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 80px; margin-left: 90px; margin-bottom: 20px;">
+    Ajouter un formateur
+  </button>
+
+
+  <table class="table" style="width: 85%; margin: auto;">
+    <thead>
+      <tr>
+        <!-- <th scope="col">id</th> -->
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Niveau</th>
+        <th scope="col">Desactivé</th>
+        <th scope="col">Detail</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor ='let professeur of usersdata'>
+      <tr *ngIf="professeur.role==2 && professeur.etat==1">
+        <!-- <th scope="row">{{professeur.id}}</th> -->
+        <td>{{professeur.nom}}</td>
+        <td>{{professeur.prenom}}</td>
+        <td>{{professeur.email}}</td>
+        <td>{{professeur.niveau}}</td>
+        <td><button class="btn btn" id="btn1" (click)="desactive(professeur.id)">Desactivé</button></td>
+        <td><button class="btn btn" id="btn2" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="Detail(professeur.id)">Voir Plus</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajout Formateur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" (submit)="Registerfunction($event)">
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" name="nom" class="form-control"  placeholder="nom" [(ngModel)]="formDataregister.nom">
+            </div>
+            <div class="mb-3">
+              <label for="prenom" class="form-label">Prenom</label>
+              <input type="text" name="prenom" class="form-control"  placeholder="prenom" [(ngModel)]="formDataregister.prenom">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control"  placeholder="name@example.com" [(ngModel)]="formDataregister.email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" placeholder="Password"
+                [(ngModel)]="formDataregister.password">
+            </div>
+            <select class="form-select"  name="matiere" [(ngModel)]="formDataregister.matiere">
+              <option selected>Open this select menu</option>
+              <option value="Html">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="Javascript">JAVASCRIPT</option>
+            </select>
+            <select class="form-select" name="niveau" [(ngModel)]="formDataregister.niveau">
+              <option selected>Open this select menu</option>
+              <option value="Licence 1">Licence 1</option>
+              <option value="Licence 2">Licence 2</option>
+              <option value="Licence 3">Licence 3</option>
+            </select>
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------ -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngIf="xuser!=0">
+          <div class="section_detail">
+            <div class="section_detail_img">
+              <img src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg&ga=GA1.1.662083046.1696519376&semt=ais">
+            </div>
+            <div>
+              <p>Nom: {{userFound.nom}}</p>
+              <p>Prenom: {{userFound.prenom}}</p>
+              <p>Email: {{userFound.email}}</p>
+              <p>Niveau: {{userFound.niveau}}</p>
+              <p>Matiere: {{userFound.Matiere[0].matiere}}</p>
+              <button class="btn btn-warning mt-3 text-center">Modifier</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

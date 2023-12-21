@@ -1,0 +1,89 @@
+<app-header-dasboard></app-header-dasboard>
+<div class="listeapprenent  mb-5">
+    <div class="container">
+    <div class="title text-center">
+      <h3 class="text-center fw-bold "><span class="material-symbols-outlined">
+        add_notes
+        </span >Liste des Classes </h3>
+    </div>
+    <div class="listecontainer" id="liste">
+      <div >
+       <button type="button" class="btn titre text-center mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+         Ajouter une matiére
+      </button>
+    </div>
+
+    <div class="card-body shadow-lg">
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+              <thead>
+                  <tr>
+                      <th appCouleurfond class="text-white fw-bold"> ID</th>
+                      <th appCouleurfond class="text-white fw-bold">Matiéres</th>
+
+                      <!-- <th appCouleurfond class="text-white fw-bold">Semestre </th> -->
+                    </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody >
+                  <tr *ngFor="let matiere1 of Matiere " >
+                      <td> {{matiere1.id}}</td>
+                      <td>{{matiere1.matiiere}}</td>
+
+
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+<!-- Ajout classe  -->
+
+<!-- Button trigger modal -->
+<div class="text-center">
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 " id="staticBackdropLabel" >
+        <span class="material-symbols-outlined">
+          list_alt_add
+          </span>
+          Ajouter une matiere </h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+      <form action="" method ="post">
+
+
+
+
+        <div class="mb-3">
+            <label for="dateEvaluation" class="form-label">Matiere</label>
+            <input type="text" class="form-control" id="ajoutclasse" name="matiere" [(ngModel)] ="matieres" >
+        </div>
+      </form>
+      </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+      <button type="button" class="btn btn-primary"  (click)="ajouterMatiere()">Enregistrer</button>
+    </div>
+
+
+  </div>
+
+
+

@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.Dashbord_admin{
+  background-color: #457A74;
+  width: 290px;
+  min-height: 715px;
+  position: fixed;
+  /* top: 0; */
+}
+
+.Dashbord_admin ul{
+  padding: 1.5em;
+  list-style: none;
+  color: white;
+}
+
+.Dashbord_admin ul li{
+  line-height: 70px;
+  cursor: pointer;
+}
+
+.Dashbord_admin ul li img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+#Dashboard{
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid darkgray;
+}
+
+#Statistique{
+  padding-left: 2em;
+}
+
+.Dashbord_admin ul li:hover{
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+.Dashbord_admin ul li:hover a{
+  color: black;
+}
+
+.Dashbord_admin ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.Dashbord_admin ul li a:hover{
+  color: black;
+}
