@@ -109,6 +109,7 @@ export class LoginpageComponent implements OnInit{
      this.storeMatiere = localStorage.getItem('Matiere');
        if (this.storedUsers) {
          this.usersMat = JSON.parse(this.usersMat);
+         console.log('this.usersMat');
        } else {
          // Si aucune donnée n'est présente dans le local storage, initialisez-le avec vos données par défaut
          localStorage.setItem('Matiere', JSON.stringify(this.Matiere));

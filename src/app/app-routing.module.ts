@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'administration/Gestion-enseignant/:id', component: DashbordProfesseurComponent },
   { path: 'administration/Gestion-matiere/:id', component: DashbordMatiereComponent },
   { path: 'administration/Gestion-classe/:id', component: DashbordClasseComponent },
-  { path: 'EspaceProf/:id', component: UserProfesseurComponent },
+  { path: 'EspaceProf', component: UserProfesseurComponent },
   { path: 'EspaceApprenant/:id', component: UserApprenantComponent },
 
 

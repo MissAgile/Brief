@@ -38,6 +38,9 @@
 
 #Statistique{
   padding-left: 2em;
+  text-align: left;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .Dashbord_admin ul li:hover{
@@ -58,3 +61,4 @@
 .Dashbord_admin ul li a:hover{
   color: black;
 }
+

@@ -51,7 +51,7 @@
 .cardbx1 i {
   font-size: 40px;
   color: #457A74;
-  background-color: #FFE0D3;
+  background-color: #ffdb58;
   padding: 0.3em;
   margin-right: 0.5em;
   border-radius: 10px;
@@ -61,7 +61,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #FFE0D3;; */
 }
 
 .cardbx2 i {
@@ -79,6 +78,6 @@
 }
 
 #btn2 {
-  background-color: #FFE0D3;
+  background-color: #ffdb58;
   color: white;
 }

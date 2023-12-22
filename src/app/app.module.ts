@@ -18,7 +18,7 @@ import { MenuEleveProfComponent } from './menu-eleve-prof/menu-eleve-prof.compon
 import { CouleurfondDirective } from './couleurfond.directive';
 import { MenuEleveComponent } from './menu-eleve/menu-eleve.component';
 import { ColorhoverDirective } from './colorhover.directive';
-import { NoteComponent } from './Utilisateur/note/note.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
 
 
 @NgModule({
@@ -39,7 +39,8 @@ import { NoteComponent } from './Utilisateur/note/note.component';
     CouleurfondDirective,
     MenuEleveComponent,
     ColorhoverDirective,
-    NoteComponent
+    MaintenanceComponent,
+
 
 
   ],

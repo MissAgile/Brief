@@ -1,97 +1,119 @@
-<div class="menuhead">
-    <!-- navbar -->
-  <nav class="navbar navbar-expand-lg " appCouleurfond>
-    <div class="container-fluid" id="imagrelogo" >
-      <a class="navbar-brand" href="#">
-        <img src="assets/image/logonote.png" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
-        <ul class="navbar-nav col-10 justify-content-center" >
-          <li class="nav-item">
-            <a class="nav-link  text-white fw-bold" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  text-white fw-bold" href="#">Note</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link   text-white fw-bold" href="#">Apprenant</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  text-white fw-bold" href="#">Evalution</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  text-white fw-bold" href="#">Classe</a>
-          </li>
-        </ul>
-        <div class="profil d-flex justify-content-end col-2  text-white fw-bold">
-          <p>professeur <i class="bi bi-person-circle" style="font-size: 20px;"></i></p>
-         </div>
-
-      </div>
+<!-- <app-header-dasboard></app-header-dasboard> -->
+<app-header-dasboard></app-header-dasboard>
+<div class="listeapprenent  mb-5">
+    <div class="container">
+    <div class="title text-center">
+      <h3 class="text-center fw-bold "><span class="material-symbols-outlined">
+        add_notes
+        </span >Liste des evaluations </h3>
     </div>
-  </nav>
-  <!-- fin navbae -->
+    <div class="listecontainer" id="liste">
+      <div >
+       <button type="button" class="btn titre text-center mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+          Ajouter une evaluation
+      </button>
+    </div>
 
-  <!-- recherche -->
-  <div class="barreRecheche mt-3 ">
-    <div class="container d-flex justify-content-evenly">
-    <div class="col-4" >
-        <!-- moadal -->
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Programme une evaluation
-        </button>
+    <div class="card-body shadow-lg">
+      <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+              <thead>
+                  <tr>
+                      <th appCouleurfond class="text-white fw-bold"> Semestre</th>
+                      <th appCouleurfond class="text-white fw-bold">Etat</th>
+                      <th appCouleurfond class="text-white fw-bold">Niveau</th>
+                      <th appCouleurfond class="text-white fw-bold">Matiere </th>
+                      <th appCouleurfond class="text-white fw-bold">Date </th>
+                      <th appCouleurfond class="text-white fw-bold">Note </th>
+                      <!-- <th appCouleurfond class="text-white fw-bold">Semestre </th> -->
+                    </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody >
+                  <tr *ngFor="let evalue of Evaluation" >
+                      <td> {{evalue.semestre}}</td>
+                      <td> {{evalue.etat}}</td>
+                      <td>{{evalue.niveau}}</td>
+                      <td>{{evalue.matiere}}</td>
+                      <td>{{evalue.date}}</td>
+                      <td><input type="text" placeholder="noter" > </td>
+                      
+                  </tr>
 
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header " id="headModal">
-                <h1 class="modal-title fs-5 " id="staticBackdropLabel">Programmer une evaluattion</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body bg-body-secondary">
-                      <div class="mb-3">
-                        <label for="semestre" class="form-label">semestre de l'évaluation</label>
-                        <select class="form-select" id="semestre" name="semestre" [(ngModel)]="addProf.semestre"    required>
-                            <option selected disabled value="">Choisis le semestre  d'évaluation</option>
-                            <option>Semestre1</option>
-                            <option>Semestre 2</option>
-                            <option>Semestre 3</option>
-                            <option>Semestre 4</option>
-                          </select>
-                    </div>
-                     <div class="mb-3">
-                      <label for="type" class="form-label">Type de l'évaluation</label>
-                      <select class="form-select" id="type" name="type" [(ngModel)]="addProf.type"    required>
-                          <option selected disabled value="">Choisis le type  d'évaluation</option>
-                          <option>Devoir</option>
-                          <option>Examen</option>
-                          <option>Autres</option>
-                        </select>
-                  </div>
-                     <div class="mb-3">
-                        <label for="matiere" class="form-label">Matiere</label>
-                        <select class="form-select" id="matiere" [(ngModel)]="addProf.matiere"   required>
-                          <option selected disabled value="">Choisissez la matière</option>
-                          <option>Anglais</option>
-                          <option>Analyse</option>
-                          <option>Algèbre</option>
-                          <option>Biologie</option>
-                          <option>Chimiee</option>
-                        </select>
-                      </div>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
 
-                    <div class="mb-3">
-                        <label for="date" class="form-label">Mettez la date de l'évaluation</label>
-                        <input type="date" class="form-control" id="date" name="date" [(ngModel)]="addProf.date" >
-                     </div>
-                    <div class="mb-3">
-                        <label for="etat" class="form-label">etat</label>
-                        <select class="form-select" id="etat"  [(ngModel)]="addProf.etat"required >
+
+<!-- Ajout classe  -->
+
+<!-- Button trigger modal -->
+<div class="text-center">
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5 " id="staticBackdropLabel" >  
+        <span class="material-symbols-outlined">
+          list_alt_add
+          </span>
+          Ajouter une classe </h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+
+    <div class="modal-body">
+      <form action="" method ="post">
+       
+    
+        <div class="mb-3">
+            <label for="validationDefault04" class="form-label">Semestre</label>
+            <select class="form-select"  name="semestre" for ="niveau" required  [(ngModel)]="addProf.semestre">
+              <option selected disabled value="">Choisissez le semestre </option>
+              <option value="semestre 1">semestre 1</option>
+              <option value="semestre 2">semestre 2</option>
+              <option value="semestre 3">semestre 3</option>
+            </select>
+          </div>
+        <div class="mb-3">
+            <label for="validationDefault04" class="form-label">  Niveau</label>
+            <select class="form-select"  name="niveau" for ="niveau" required  [(ngModel)]="addProf.niveau">
+              <option selected disabled value="">Choisissez le niveau </option>
+              <option value="licence 1">Licence 1</option>
+              <option value="licence 2">Licence 2</option>
+              <option value="licence 3">Licence 3</option>
+              <option value="Master 1">Master 1</option>
+              <option value="Master 2">Master 2</option>
+            </select>
+          </div>
+        
+          <div class="mb-3">
+            <label for="matiere" class="form-label">Matiere</label>
+            <select class="form-select" id="matiere" name ="matiere"[(ngModel)]="addProf.matiere"   required>
+              <option selected disabled value="">Choisissez la matière</option>
+              <option value="Anglais">Anglais</option>
+              <option value="Analyse">Analyse</option>
+              <option value="Algèbre">Algèbre</option>
+              <option value="Biologie">Biologie</option>
+              <option value="Chimie">Chimie</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Mettez la date de l'évaluation</label>
+            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="addProf.date" >
+         </div>
+               <div class="mb-3">
+                        <label for="etat" class="form-label">Etat</label>
+                        <select class="form-select" id="etat" name="etat"  [(ngModel)]="addProf.etat"required >
                           <option selected disabled value="">Choisissez la etat</option>
                           <option>A Faire</option>
                           <option>Encours</option>
@@ -99,151 +121,20 @@
 
                         </select>
                       </div>
-                    <div class="mb-3">
-                        <label for="niveau" class="form-label">Classe</label>
-                        <select class="form-select" id="niveau"  [(ngModel)]="addProf.niveau"required >
-                          <option selected disabled value="">Choisissez la Classe</option>
-                          <option>Licence 1</option>
-                          <option>Licence 2</option>
-                          <option>Licence 3</option>
-                          <option>Master 1</option>
-                          <option>Master 2</option>
-                        </select>
-                      </div>
                       <div class="mb-3">
                         <label for="professeur" class="form-label">Mettez la professeur de l'évaluation</label>
                         <input type="professeur" class="form-control" id="professeur" name="professeur" [(ngModel)]="addProf.professeur" >
                      </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary" (click)="addEvaluation()">Enregistrer</button>
-                </div>
-            </div>
-            </div>
-        </div>
-                <!-- moadal -->
-
-
-    </div>
-
-
-    <!-- Modal -->
-            <form class="col-8 navbar-search">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="rechercher une evaluation" 
-                        aria-label="Search" aria-describedby="basic-addon2" [(ngModel)]="filterValue" (input)="onSearch()">
-                    <div class="input-group-append">
-                        <button class="btn " type="button" appCouleurfond>
-                            <i class="bi bi-search" style="color :white;  "></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-    </div>
-  </div>
-
-  <!-- fin recherchebar -->
-
-  
-  
-      
-
-
-          <div class="row">
-            <!-- Pie Chart -->
-          <div class="col-xl-3 col-lg-4 rounded-5 mb-4 " *ngFor="let evalue of Evaluation">
-                  <div class="card-body bg-white rounded-5  shadow ">
-                      <img id="imgAnnonce" class=" rounded-5  w-100" src="https://img.freepik.com/photos-gratuite/jeune-etudiant-apprenant-dans-bibliotheque_23-2149215390.jpg?size=626&ext=jpg&ga=GA1.1.1598110183.1692458193&semt=sph" alt="">
-                      <div class=" p-3 text-left rounded-5">
-                          <h4>{{evalue.semestre}}</h4>
-                          <span class="mr-2">
-                            {{evalue.type}}
-                          </span>
-                          <div class="container contentIcone ">
-                              <span class="mr-2">
-                                <i class="bi bi-pencil-square"></i>
-                              </span>
-
-                              <span class="mr-2">
-                                <i class="bi bi-archive-fill"></i>
-                              </span>
-                              <span class="mr-2">
-                                <i class="bi bi-archive"></i>
-                            </span>
-                          </div>
-                      </div>
-
-                  </div>
-          </div>
-
-
-        </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content ">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Liste de la classe</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-              <div class="modal-body" >
-                    <!-- Button trigger modal -->
-                         
-                          <div class="mb-3">
-                            <label for="prenomEleve" class="form-label">Prenom </label>
-                            <input type="text" class="form-control" id="prenomEleve" name="prenomEleve" [(ngModel)]="maClasse.prenomEleve"    >
-                          </div>
-                          <div class="mb-3">
-                            <label for="nomEleve" class="form-label">Nom </label>
-                            <input type="text" class="form-control" id="nomEleve" name="nomEleve" [(ngModel)]="maClasse.nomEleve"   >
-                          </div>
-                              <div class="mb-3">
-                                <label for="classEleve" class="form-label">classe de l'eleve</label>
-                                <select class="form-select" id="classEleve" name="classEleve" [(ngModel)]="maClasse.classEleve"    required>
-                                    <option selected disabled value="">Choisis le class  d'évaluation</option>
-                                    <option>Licence 1</option>
-                                    <option>Licence 2</option>
-                                    <option>Licence 3</option>
-                                    <option>Licence 4</option>
-                                  </select>
-                            </div>
-                            <div class="mb-3">
-                              <label for="noteEleve" class="form-label">Note </label>
-                              <input type="number" class="form-control" id="noteEleve" name="noteEleve" [(ngModel)]="maClasse.noteEleve">
-                            </div>
-                            <button class="btn btn-primary" (click)="addeClasse()">Ajouter</button>
-                    
-                            <!-- tableau affiche -->
-                              <div class=" container card-body shadow-lg mt-5  bg-white">
-                                <div  class=" table-responsive  ">
-                                  <table class="table mb-3 table-hover table-sm   table-bordered">
-                                    <thead>
-                                      <tr class="text-center">
-                                        <th appCouleurfond>Prenom</th>
-                                        <th appCouleurfond>Nom</th>
-                                        <th appCouleurfond>Classe </th>
-                                        <th appCouleurfond>Note</th>
-                                      </tr>
-
-                                    </thead>
-                                    <tbody>
-                                      <tr *ngFor="let liste of classes">
-                                        <td>{{liste.prenomEleve}}</td>
-                                        <td>{{liste.nomEleve}}</td>
-                                        <td>{{liste.classEleve}}</td>
-                                        <td>{{liste.noteEleve}}</td>
-                                      </tr>
-                                      
-                                    </tbody>
-                                  </table>
-                                  </div>
-                              </div>
-              </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
-          </div>
-        </div>
+      </form>
       </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+      <button type="button" class="btn btn-primary"  (click)="addEvaluation()">Enregistrer</button>
     </div>
+
+
+  </div>
+ 
+
+  
